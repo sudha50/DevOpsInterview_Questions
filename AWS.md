@@ -51,3 +51,11 @@ Replace `"YOUR_BUCKET_NAME"` with the actual name of your S3 bucket.
 
 then setup target
 ![1687800011524](image/AWS/1687800011524.png)
+
+
+AWS Event Bridge has large destination list
+![1687801106834](image/AWS/1687801106834.png)
+
+but from AWS S3 Event notification you have only 3 destinations
+
+![1687801168933](image/AWS/1687801168933.png)
