@@ -1,12 +1,12 @@
 # AWS interview Questions
 
-* how do you 
+* how do you
 * Do I need to create NAT gateway for each Az in subnet?
   A: Each NAT gateway is created in a specific Availability Zone and implemented with redundancy in that zone. There is a quota on the number of NAT gateways that you can create in each Availability Zone. If you have resources in multiple Availability Zones and they share one NAT gateway, and if the NAT gateway’s Availability Zone is down, resources in the other Availability Zones lose internet access. To improve resiliency, create a NAT gateway in each Availability Zone, and configure your routing to ensure that resources use the NAT gateway in the same Availability Zone.
 * How to send email when an object pushed to s3
   two ways,
 
-  ### * AWS event notification
+  ### AWS event notification
 
   Create an SNS topic: Go to the AWS Management Console and navigate to the Amazon SNS service. Create a new topic that will be used to publish the email notifications.
 
@@ -27,9 +27,10 @@
   Test the setup: Upload an object to the configured S3 bucket. You should receive an email notification for the object creation event.
 
 
-### AWS Event Bridge:
+###   AWS Event Bridge:
 
-3. Create an Amazon EventBridge rule: Go to the AWS Management Console and navigate to the Amazon EventBridge service (previously CloudWatch Events). Create a new rule that will match events from your S3 bucket.
+1. Create an Amazon EventBridge rule: Go to the AWS Management Console and navigate to the Amazon EventBridge service (previously CloudWatch Events). Create a new rule that will match events from your S3 bucket.
+
 4. Specify the event pattern: Configure the event pattern to include the bucket name. You can use the following event pattern as a starting point:
 
 ```json
