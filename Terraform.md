@@ -577,7 +577,7 @@
    **Terraform State Locking** will make sure that the state is “locked” if it’s presently in use by another user.
    Terraform locking will be implemented in AWS as follows
 
-   ```json
+   ```
    terraform {
        backend “s3” {
            bucket = “s3-terraform-bucket-remote-state”
@@ -602,18 +602,6 @@ type = “S”
 }
 ```
 
-```
-resource “aws_dynamodb_table” “example-dynamodb” {
-    name = “terraform-state-lock-dynamodb-table”
-    hash_key = “LockID”
-    read_capacity = 10
-    write_capacity = 10
-    attribute {
-        name = “LockID”
-        type = “S”
-    }
-}
-```
 
 an example lock in dynamoDB table
 
